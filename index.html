@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaiMusic</title>
+    <link rel="icon" href="image/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- pop-ups -->
+    <!-- msj alert -->
+    <div class="container_msj_alert">
+      <article class="msj_alert">
+        <div class="alert__logo-container">
+          <img class="alert__logo" src="/image/icon.png" alt="" />
+        </div>
+        <div class="alert__title-container">
+          <h2 class="title-alert">Bienvenido a MaiMusic</h2>
+        </div>
+        <div class="alert__desc-container">
+          <p class="alert-description">
+            Para seleccionar la musica que desea reproducir, solo seleccione y
+            agregue. Con un maximo de 8 canciones
+          </p>
+        </div>
+        <div class="alert__btn-container">
+          <button class="alert__btn">Aceptar</button>
+        </div>
+      </article>
+    </div>
+    <div class="container">
+      <nav class="nav">
+        <!-- search and logo -->
+        <div class="nav__container-logo">
+          <img class="nav__logo" src="image/icon.png" alt="" />
+        </div>
+        <div class="nav__container-src">
+          <input class="searchMusic" type="text" placeholder="Search Music" />
+        </div>
+        <div class="nav__container-mobile">
+          <i id="burgerlist_mobile" class="bi bi-list"></i>
+        </div>
+        <div class="pop-ups hideburger">
+          <article class="pop-ups__burger-list">
+            <ul class="list-burger">
+              <li class="list"><a href="#">Inicio</a></li>
+              <li class="list"><a href="">Contactarnos</a></li>
+            </ul>
+          </article>
+        </div>
+      </nav>
+      <div class="containerMusic">
+        <div class="containerMusic__cards">
+          <!-- song cards  -->
+          
+      </div>
+      <template class="templatecards">
+        <article class="cards">
+          <img
+            class="card-img"
+            src=""
+            alt=""
+          />
+          <p class="card-title">song here</p>
+          <div class="btnadd_container">
+            <button class="btn-add ">
+              <i
+                data-disc=""
+                data-title=""
+                data-path=""
+                class="bi bi-plus-circle-fill"
+              ></i>
+            </button>
+          </div>
+        </article>
+      </template>
+      <!-- footer -->
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__links">
+            <!-- footer links network -->
+            <a
+              class="links"
+              href="https://www.linkedin.com/in/jeremias-mai-45648516a/"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a class="links" href="https://github.com/Maisena1"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a class="links" href="mailto:jeremiasmaiasd@gmail.com"
+              ><i class="bi bi-envelope-fill"></i
+            ></a>
+          </div>
+          <!-- footer logo final -->
+          <div class="footer__logo">
+            <img
+              class="footer__logo-img"
+              src="/image/Maisena Logo Solo.png"
+              alt="Maisena Logo Solo"
+            />
+          </div>
+        </div>
+        <div class="footer__final">
+          <p class="final_reserved">
+            &copy; 2023 MaiMusic | All rights reserved
+          </p>
+        </div>
+      </footer>
+      <div class="containerlist__list listshow">
+        <article class="list-music">
+          <div class="list-music__fist">
+            <div class="arrow-list"><i class="bi bi-caret-up-fill"></i></div>
+          </div>
+          <section class="container_list">
+            <ul class="list-music__music">
+              <!-- templates -->
+            </ul>
+          </section>
+        </article>
+      </div>
+      <template class="template">
+        <li class="template__container">
+          <div class="template__container-music">
+            <img class="list-music-img" src="" alt=" titulo" />
+            <p class="list-music-title">musica</p>
+            <div class="controlplay"><i class="bi bi-play-fill"></i></div>
+            <div class="controlpause"><i class="bi bi-pause-fill"></i></div>
+            <div class="delete"><i class="bi bi-trash"></i></i></div>
+          </div>
+        </li>
+      </template>
+    </div>
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
