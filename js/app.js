@@ -11,7 +11,7 @@ const fragment = document.createDocumentFragment();
 const audio = document.querySelector(".audio");
 let state = false;
 let statearrow = false;
-let playing = false;
+let playing = -1;
 let music_list = [];
 music.forEach((item) => {
   const clone = templatemusic.content.cloneNode(true);
@@ -116,17 +116,23 @@ const showmusic = () => {
   });
   container.appendChild(fragment);
 };
-const btnplay = () => {
-  music_list.forEach((item) => {
-    let audio = document.createElement("audio");
-    if (!playing) {
-      audio.setAttribute("src", item.path);
-      audio.play();
-      playing = true;
-    } else {
-      audio.pause();
-      playing = false;
-      audio = "";
-    }
-  });
+const btnplay = (e) => {
+  const clickedIndex = music_list.findIndex(
+    (item) => item.id === e.target.dataset.id
+  );
+  console.log(clickedIndex);
+
+  if (playing !== -1 && playing !== clickedIndex) {
+    audio.pause();
+    playing = -1;
+  }
+
+  if (playing === clickedIndex) {
+    audio.pause();
+    playing = -1;
+  } else {
+    audio.src = music_list[clickedIndex].path;
+    audio.play();
+    playing = clickedIndex;
+  }
 };

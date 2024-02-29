@@ -236,6 +236,11 @@
 .delete :hover {
   color: #ff2a6d;
 }
+.graybutton{
+  color: gray;
+  user-select: none;
+  bottom: unset;
+}
 @keyframes showburger {
   0% {
   }
