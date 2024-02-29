@@ -8,9 +8,10 @@ const templatemusic = document.querySelector(".templatecards");
 const template = document.querySelector(".template");
 const arrow = document.querySelector(".arrow-list");
 const fragment = document.createDocumentFragment();
-let audio = "";
+const audio = document.querySelector(".audio");
 let state = false;
 let statearrow = false;
+let playing = false;
 let music_list = [];
 music.forEach((item) => {
   const clone = templatemusic.content.cloneNode(true);
@@ -99,10 +100,10 @@ const addmusic = (e) => {
       music_list.push(music);
     }
   }
-  showmusic(e);
+  showmusic();
 };
 
-const showmusic = (e) => {
+const showmusic = () => {
   container.textContent = "";
   music_list.forEach((item) => {
     const clone = template.content.cloneNode(true);
@@ -115,16 +116,17 @@ const showmusic = (e) => {
   });
   container.appendChild(fragment);
 };
-const btnplay = (e) => {
+const btnplay = () => {
   music_list.forEach((item) => {
-    if (e.target.dataset.id === item.id) {
-      audio = new Audio(item.path);
+    let audio = document.createElement("audio");
+    if (!playing) {
+      audio.setAttribute("src", item.path);
       audio.play();
+      playing = true;
+    } else {
+      audio.pause();
+      playing = false;
+      audio = "";
     }
   });
-};
-const btnpause = (e) => {
-  if (audio.play()) {
-    audio.pause();
-  }
 };
